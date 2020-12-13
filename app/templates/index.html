@@ -1,0 +1,51 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+{% block content %}
+
+<div class="contaier">
+  <div>
+    <img src="PIC.jpg" alt="">
+    <div>
+        <h1 style="color:blue;text-align: center;">Blogs</h1>
+          <br>
+      <h3 style="color:blue; text-align: center;"><a href="/blogs/new/">Add Your Blog</a></h3>
+          <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#political">Political</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#comedy">comedy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#sport">sport</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#technology">technology</a>
+            </li>
+          </ul>
+    </div>
+    <div class="row">
+    </div>
+    <div class="tab-content">
+      <div id="political" class="container tab-pane active"><br>
+        {{ macro.displayList(political)}}
+      </div>
+      <div id="sport" class="container tab-pane fade"><br>
+        {{ macro.displayList(sport) }}
+      </div>
+        <div id="technology" class="container tab-pane fade"><br>
+          {{ macro.displayList(technology) }}
+          
+        </div>
+        <div id="comedy" class="container tab-pane fade"><br>
+          {{ macro.displayList(comedy) }}
+        </div>
+        
+        
+      </div>
+    </div>
+</div>
+{% endblock %}
