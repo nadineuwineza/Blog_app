@@ -6,11 +6,9 @@
 {% block content %}
 
 <div class="contaier">
-  <div>
-    <img src="PIC.jpg" alt="">
-    <div>
-        <h1 style="color:blue;text-align: center;">Blogs</h1>
+        <h1 style="color:blue;text-align: center;">Welcome to the Best Blogs !</h1>
           <br>
+         
       <h3 style="color:blue; text-align: center;"><a href="/blogs/new/">Add Your Blog</a></h3>
           <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
             <li class="nav-item">
@@ -26,6 +24,14 @@
               <a class="nav-link active" data-toggle="tab" href="#technology">technology</a>
             </li>
           </ul>
+    </div>
+    <div class="card-header">
+      <div class="card-title">
+          <h2 style="text-align: center;">Quote of the day..</h2>
+      </div>
+      <div class="card-body">
+        <h2 class="quoted-author" style="text-align: center;">{{ quote.author }}</h2>
+        <p class="quoted-quote" style="text-align: center;">{{ quote.quote }}</p>
     </div>
     <div class="row">
     </div>
@@ -44,8 +50,16 @@
           {{ macro.displayList(comedy) }}
         </div>
         
+      </div>
         
       </div>
     </div>
 </div>
+
+<style>
+  body{
+    background-color: black;
+    color: white;
+  }
+</style>
 {% endblock %}
